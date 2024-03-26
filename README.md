@@ -37,9 +37,9 @@ A personal portfolio website built with React.js and styled using Sass. Employs 
 - [GitHub](https://github.com)
 - [Stylelint](https://stylelint.io/)
 - [ESLint](https://eslint.org/)
-- [SASS]()
-- [Prop-Type]()
-- [Gh-pages]()
+- [SASS](https://sass-lang.com/)
+- [Prop-Type](https://github.com/facebook/prop-types)
+- [Gh-pages](https://github.com/tschaub/gh-pages)
 
 
 ### Key Features <a name="key-features"></a>
