@@ -2,21 +2,53 @@
 @use "../abstracts/colors" as colors;
 
 // Variables
-$nav-gap: 30px;
+$nav-gap: clamp(1.5rem, 1.0714rem + 0.8929vi, 1.875rem);
 $line-height: 1.185;
-$header-padding: 35px clamp(3.75rem, 2.8697rem + 3.7559vi, 6.25rem);
+$header-padding-desktop: 35px clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
+$header-padding-mobile: 35px clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
+$btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
 
 .header {
   display: flex;
-  align-items: center;
-  gap: $nav-gap;
-  padding: $header-padding;
+  padding: $header-padding-desktop;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    padding: $header-padding-mobile;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: $nav-gap;
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      gap: 60px;
+      min-height: 100vh;
+      border: 1px solid red;
+      background-color: colors.$secondary-bg-color;
+    }
+  }
 
   &__nav {
     margin-left: auto;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
     &-list {
       display: flex;
       gap: $nav-gap;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 60px;
+      }
     }
     &-item {
       a {
@@ -37,12 +69,14 @@ $header-padding: 35px clamp(3.75rem, 2.8697rem + 3.7559vi, 6.25rem);
           bottom: -5px;
           left: 0;
           transition: width 0.3s ease-in-out;
+
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
         }
 
-        &:hover {
-          &::before {
-            width: 100%;
-          }
+        &:hover::before {
+          width: 100%;
         }
 
         & > span:first-child {
@@ -56,12 +90,44 @@ $header-padding: 35px clamp(3.75rem, 2.8697rem + 3.7559vi, 6.25rem);
           font-weight: 500;
           font-size: 1rem;
           line-height: $line-height;
+
+          @media screen and (max-width: 768px) {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 2px;
+              background-color: colors.$white;
+              bottom: -5px;
+              left: 0;
+              transition: width 0.3s ease-in-out;
+            }
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+
+          &:hover {
+            & > span:last-child::before {
+              width: 100%;
+            }
+          }
         }
       }
     }
   }
 
   &__download {
-    @include mixins.btn;
+    @include mixins.btn($size: $btn-text-size);
+  }
+
+  &__menu-btn{
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 }

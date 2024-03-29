@@ -1,16 +1,21 @@
 @use "./colors" as colors;
 
-@mixin btn($color: colors.$accent-color) {
-	display: inline-block;
+@mixin btn(
+  $color: colors.$accent-color,
+  $padding-block: 15px,
+  $padding-inline: 30px,
+  $size: 1.25rem
+) {
+  display: inline-block;
   color: $color;
   border: 2px solid $color;
   background-color: transparent;
   border-radius: 10px;
-  padding: 15px 30px;
+  padding: $padding-block $padding-inline;
   text-decoration: none;
-	font-size: 1.25rem;
-	line-height: 1.185;
-	font-weight: 700;
+  font-size: $size;
+  line-height: 1.185;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
@@ -19,8 +24,7 @@
     color: colors.$white;
   }
 
-  // Optional focus styles for accessibility
   &:focus {
-    outline: 2px solid $color;
+    outline: 2px solid colors.$white;
   }
 }
