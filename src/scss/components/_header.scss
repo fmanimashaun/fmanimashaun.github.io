@@ -1,0 +1,67 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/colors" as colors;
+
+// Variables
+$nav-gap: 30px;
+$line-height: 1.185;
+$header-padding: 35px clamp(3.75rem, 2.8697rem + 3.7559vi, 6.25rem);
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $nav-gap;
+  padding: $header-padding;
+
+  &__nav {
+    margin-left: auto;
+    &-list {
+      display: flex;
+      gap: $nav-gap;
+    }
+    &-item {
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: colors.$white;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background-color: colors.$white;
+          bottom: -5px;
+          left: 0;
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
+
+        & > span:first-child {
+          color: colors.$accent-color;
+          font-weight: 700;
+          font-size: 1.25rem;
+          line-height: $line-height;
+        }
+
+        & > span:last-child {
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: $line-height;
+        }
+      }
+    }
+  }
+
+  &__download {
+    @include mixins.btn;
+  }
+}

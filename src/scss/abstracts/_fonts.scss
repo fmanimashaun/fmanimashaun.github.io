@@ -1,0 +1,11 @@
+/* import fonts */
+
+/* Rubik font */
+@font-face {
+  font-family: "Rubik";
+  src: url("../../assets/fonts/Rubik/Rubik-VariableFont_wght.ttf")
+    format("TrueType");
+  font-optical-sizing: auto;
+}
+
+$primary-ff: "Rubik", sans-serif;
