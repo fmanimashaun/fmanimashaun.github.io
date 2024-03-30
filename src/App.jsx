@@ -37,7 +37,8 @@ const App = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            fontSize: "3rem",
+            fontSize: "4.5rem",
+            fontWeight: "bold",
             color: "white",
             background: "black",
           }}
@@ -52,8 +53,9 @@ const App = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            fontSize: "3rem",
-            color: "white",
+            fontSize: "4.5rem",
+            fontWeight: "bold",
+            color: "black",
             background: "red",
           }}
         >
@@ -67,12 +69,13 @@ const App = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            fontSize: "3rem",
-            color: "white",
+            fontSize: "4.5rem",
+            fontWeight: "bold",
+            color: "black",
             background: "yellow",
           }}
         >
-          Experience
+          Work
         </div>
 
         <div
@@ -82,12 +85,13 @@ const App = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            fontSize: "3rem",
+            fontSize: "4.5rem",
+            fontWeight: "bold",
             color: "black",
             background: "white",
           }}
         >
-          Experience
+          Contact
         </div>
         {isVisible && (
           <button className="back-top" type="button" onClick={scrollToTop}>
