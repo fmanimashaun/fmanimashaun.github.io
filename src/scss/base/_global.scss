@@ -47,3 +47,22 @@ body {
     margin-block-end: 0;
   }
 }
+
+.back-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+  background-color: transparent;
+  color: colors.$accent-color;
+  border: 1px solid colors.$accent-color;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: colors.$accent-color;
+    color: colors.$white;
+  }
+}

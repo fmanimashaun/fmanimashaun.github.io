@@ -21,18 +21,24 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
     display: flex;
     align-items: center;
     gap: $nav-gap;
+    margin-left: auto;
 
     @media screen and (max-width: 768px) {
-      position: absolute;
+      position: fixed;
       top: 0;
-      left: 0;
+      left: -100%;
       width: 100%;
+      z-index: 2;
       flex-direction: column;
       justify-content: center;
       gap: 60px;
       min-height: 100vh;
-      border: 1px solid red;
       background-color: colors.$secondary-bg-color;
+      transition: left 0.75s ease-in-out;
+
+      &.open {
+        left: 0;
+      }
     }
   }
 
@@ -123,11 +129,19 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
     @include mixins.btn($size: $btn-text-size);
   }
 
-  &__menu-btn{
+  &__menu-btn {
     margin-left: auto;
     padding: 0;
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    &.open {
+      position: fixed;
+      top: 25px;
+      right: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
+      display: block;
+      z-index: 3;
+    }
   }
 }
