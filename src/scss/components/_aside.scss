@@ -1,0 +1,40 @@
+@use "../abstracts/colors" as colors;
+
+$off-desktop-inline: clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
+$off-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
+
+.aside {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  width: fit-content;
+	height: 100vh;
+	border: 1px solid red;
+
+	&.right {
+		right: calc($off-desktop-inline - 16.59px);
+	}
+
+	&.left {
+		left: calc($off-desktop-inline - 25px);
+	}
+
+  span {
+    position: relative;
+    writing-mode: vertical-rl;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.185;
+    color: colors.$off-white;
+  }
+
+	a {
+		display: block;
+		padding: 0.5rem 0;
+		color: colors.$off-white;
+		text-decoration: none;
+		font-size: 14px;
+		line-height: 1.185;
+	}
+}

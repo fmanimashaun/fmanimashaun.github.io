@@ -1,0 +1,10 @@
+$main-padding-desktop-inline: clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
+$main-padding-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: $main-padding-desktop-inline;
+  &__wrapper {
+    flex: auto;
+  }
+}
