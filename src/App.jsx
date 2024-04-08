@@ -121,7 +121,9 @@ const App = () => {
           </div>
         </div>
         <Aside className="right">
-          <span>https://fmanimashaun.com/</span>
+          <div className="aside__link">
+            <a href="https://fmanimashaun.com/" className="website">https://fmanimashaun.com/</a>
+          </div>
         </Aside>
         {isVisible && (
           <button className="back-top" type="button" onClick={scrollToTop}>
