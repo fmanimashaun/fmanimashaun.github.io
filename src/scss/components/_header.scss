@@ -10,9 +10,11 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
 
 .header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: $header-padding-desktop;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     position: relative;
     padding: $header-padding-mobile;
   }
@@ -23,7 +25,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
     gap: $nav-gap;
     margin-left: auto;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       position: fixed;
       top: 0;
       left: -100%;
@@ -44,14 +46,14 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
 
   &__nav {
     margin-left: auto;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       margin-left: 0;
     }
     &-list {
       display: flex;
       gap: $nav-gap;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         flex-direction: column;
         gap: 60px;
       }
@@ -76,7 +78,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
           left: 0;
           transition: width 0.3s ease-in-out;
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 1024px) {
             display: none;
           }
         }
@@ -97,7 +99,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
           font-size: 1rem;
           line-height: $line-height;
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 1024px) {
             position: relative;
             &::before {
               content: "";
@@ -112,7 +114,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
           }
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1024px) {
           flex-direction: column;
 
           &:hover {

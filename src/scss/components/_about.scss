@@ -1,0 +1,28 @@
+@use "../abstracts/colors" as color;
+
+.about {
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 30px;
+    line-height: 1.185;
+
+    & span:first-child {
+      font-size: 32px;
+      color: color.$accent-color;
+    }
+
+		& span:nth-child(2) {
+      margin-inline-end: 24px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      flex-grow: 1;
+      height: 2px;
+      background-color: color.$accent-color;
+    }
+  }
+}

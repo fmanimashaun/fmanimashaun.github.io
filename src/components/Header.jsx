@@ -4,6 +4,7 @@ import Resume from "@/data/resume.pdf";
 import ButtonLink from "./ButtonLink";
 import MenuImg from "@/assets/img/menu.svg";
 import CloseImg from "@/assets/img/close.svg";
+import Logo from "./Logo";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,8 +29,9 @@ const Header = () => {
 
   return (
     <header className="header">
+      <Logo />
       <div
-        className={`header__wrapper ${showMenu && width < 769 ? "open" : ""}`}
+        className={`header__wrapper ${showMenu && width < 1025 ? "open" : ""}`}
       >
         <nav className="header__nav">
           <ul className="header__nav-list">
@@ -67,7 +69,7 @@ const Header = () => {
           Resume
         </ButtonLink>
       </div>
-      {width < 769 && (
+      {width < 1025 && (
         <>
           {!showMenu && (
             <button className="header__menu-btn" onClick={handleMenu}>

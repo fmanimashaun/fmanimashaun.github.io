@@ -8,6 +8,7 @@ import { FiInstagram } from "react-icons/fi";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaCodepen } from "react-icons/fa";
 import Aside from "./components/Aside";
+import SectionHeader from "./components/SectionHeader";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,73 +57,15 @@ const App = () => {
           </div>
         </Aside>
         <div className="main__wrapper">
-          <div
-            id="about"
-            style={{
-              height: "90vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "4.5rem",
-              fontWeight: "bold",
-              color: "white",
-              background: "black",
-            }}
-          >
-            about
-          </div>
-
-          <div
-            id="experience"
-            style={{
-              height: "80vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "4.5rem",
-              fontWeight: "bold",
-              color: "black",
-              background: "red",
-            }}
-          >
-            Experience
-          </div>
-
-          <div
-            id="work"
-            style={{
-              height: "80vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "4.5rem",
-              fontWeight: "bold",
-              color: "black",
-              background: "yellow",
-            }}
-          >
-            Work
-          </div>
-
-          <div
-            id="contact"
-            style={{
-              height: "80vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "4.5rem",
-              fontWeight: "bold",
-              color: "black",
-              background: "white",
-            }}
-          >
-            Contact
+          <div id="about">
+            <SectionHeader className="about" />
           </div>
         </div>
         <Aside className="right">
           <div className="aside__link">
-            <a href="https://fmanimashaun.com/" className="website">https://fmanimashaun.com/</a>
+            <a href="https://fmanimashaun.com/" className="website">
+              https://fmanimashaun.com/
+            </a>
           </div>
         </Aside>
         {isVisible && (
