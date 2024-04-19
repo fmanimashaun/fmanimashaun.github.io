@@ -4,6 +4,10 @@ $main-padding-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
   display: flex;
   justify-content: space-between;
   padding-inline: $main-padding-desktop-inline;
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: $main-padding-mobile-inline;
+  }
   &__wrapper {
     flex: auto;
   }

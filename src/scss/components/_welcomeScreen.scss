@@ -1,0 +1,61 @@
+@use "../abstracts/colors" as color;
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+
+  &__content {
+    position: relative;
+    width: 150px;
+    height: 130px; /* width*√3/2 */
+    clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: conic-gradient(
+      color.$accent-color 0% 0%,
+      color.$primary-bg-color 0% 100%
+    );
+    animation: gradient 5s forwards;
+    transition: background 1s ease-in-out;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      background-color: rgba(34, 33, 47, 1);
+      width: 130px;
+      height: calc(65px * 1.732);
+      clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99;
+      content: "FM";
+      color: #00b3a0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    @keyframes gradient {
+      @for $i from 0 through 20 {
+        $percentage: #{(5 * $i) + "%"};
+        #{$percentage} {
+          background: conic-gradient(
+            color.$accent-color 0% $percentage,
+            color.$primary-bg-color $percentage 100%
+          );
+        }
+      }
+    }
+  }
+}

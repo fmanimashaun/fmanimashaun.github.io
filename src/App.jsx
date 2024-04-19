@@ -9,9 +9,11 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaCodepen } from "react-icons/fa";
 import Aside from "./components/Aside";
 import SectionHeader from "./components/SectionHeader";
+import WelcomeScreen from "./components/WelcomeScreen";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   const toggleVisibility = () => {
     if (window.scrollY > 200) {
@@ -33,49 +35,65 @@ const App = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowWelcome(false), 5000);
+
+    // Cleanup function to clear the timeout when the component unmounts
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
-      <Header />
-      <main className="main">
-        <Aside className="left">
-          <div className="aside__icons">
-            <a href="https://github.com/fmanimashaun" target="_blank">
-              <FiGithub size={25} />
-            </a>
-            <a href="https://www.instagram.com/fmanimashaun/" target="_blank">
-              <FiInstagram size={25} />
-            </a>
-            <a href="https://twitter.com/fmanimashaun" target="_blank">
-              <FiTwitter size={25} />
-            </a>
-            <a href="https://www.linkedin.com/in/fmanimashaun/" target="_blank">
-              <AiOutlineLinkedin size={25} />
-            </a>
-            <a href="https://codepen.io/fmanimashaun" target="_blank">
-              <FaCodepen size={25} />
-            </a>
-          </div>
-        </Aside>
-        <div className="main__wrapper">
-          <div id="about">
-            <SectionHeader className="about" />
-          </div>
-        </div>
-        <Aside className="right">
-          <div className="aside__link">
-            <a href="https://fmanimashaun.com/" className="website">
-              https://fmanimashaun.com/
-            </a>
-          </div>
-        </Aside>
-        {isVisible && (
-          <button className="back-top" type="button" onClick={scrollToTop}>
-            <FaArrowUp />
-          </button>
-        )}
-      </main>
+      {showWelcome ? (
+        <WelcomeScreen />
+      ) : (
+        <>
+          <Header />
+          <Aside className="left">
+            <div className="aside__icons">
+              <a href="https://github.com/fmanimashaun" target="_blank">
+                <FiGithub size={25} />
+              </a>
+              <a href="https://www.instagram.com/fmanimashaun/" target="_blank">
+                <FiInstagram size={25} />
+              </a>
+              <a href="https://twitter.com/fmanimashaun" target="_blank">
+                <FiTwitter size={25} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/fmanimashaun/"
+                target="_blank"
+              >
+                <AiOutlineLinkedin size={25} />
+              </a>
+              <a href="https://codepen.io/fmanimashaun" target="_blank">
+                <FaCodepen size={25} />
+              </a>
+            </div>
+          </Aside>
+          <main className="main">
+            <div className="main__wrapper">
+              <div id="about">
+                <SectionHeader className="about" />
+              </div>
+            </div>
 
-      <Footer />
+            {isVisible && (
+              <button className="back-top" type="button" onClick={scrollToTop}>
+                <FaArrowUp />
+              </button>
+            )}
+          </main>
+          <Aside className="right">
+            <div className="aside__link">
+              <a href="https://fmanimashaun.com/" className="website">
+                https://fmanimashaun.com/
+              </a>
+            </div>
+          </Aside>
+          <Footer />
+        </>
+      )}
     </>
   );
 };
