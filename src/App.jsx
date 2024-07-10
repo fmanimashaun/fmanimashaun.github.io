@@ -36,7 +36,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShowWelcome(false), 5000);
+    const timeout = setTimeout(() => setShowWelcome(false), 4000);
 
     // Cleanup function to clear the timeout when the component unmounts
     return () => clearTimeout(timeout);

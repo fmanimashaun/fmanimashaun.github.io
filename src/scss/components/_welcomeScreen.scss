@@ -1,57 +1,60 @@
 @use "../abstracts/colors" as color;
 
-.welcome {
+.welcome-screen {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 100vh;
-}
 
-.hexagon {
-  width: 100px;
-  height: 100px;
-}
+  &__hexagon {
+    width: 150px;
+    height: 130px;
 
-#hexagon-path {
-  fill: none;
-  stroke: white;
-  stroke-width: 2;
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: draw 2s ease-in-out forwards, fadeOut 2s 3s forwards;
-}
-
-.letter {
-  fill: white;
-  font-size: 32px;
-  opacity: 0;
-  animation: fadeIn 1s 2s forwards, fadeOut 2s 3s forwards;
-}
-
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 300;
+    &-path {
+      fill: none;
+      stroke: #00b3a0;
+      stroke-width: 5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: draw 2s ease-in-out forwards, fadeOut 2s 3s forwards;
+    }
   }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
 
-@keyframes fadeIn {
-  0% {
+  &__letter {
+    fill: #00b3a0;
+    font-weight: bold;
+    font-size: 2.5rem;
     opacity: 0;
+    animation: fadeIn 1s 2s forwards, fadeOut 2s 3s forwards;
   }
-  100% {
-    opacity: 1;
-  }
-}
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 300;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
   }
-  100% {
-    opacity: 0;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 }
