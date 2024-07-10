@@ -1,5 +1,5 @@
-import React from "react";
 import ButtonLink from "./ButtonLink";
+import Resume from "@/data/resume.pdf";
 
 const Intro = () => {
   return (
@@ -9,7 +9,7 @@ const Intro = () => {
       <p>...Building the Next Big Thing</p>
       <p>
         I&apos;m a software engineer specializing in building internal software
-        solutions to address evolving business needs. Currently, I'm focused on
+        solutions to address evolving business needs. Currently, I&apos;m focused on
         crafting impactful applications at{" "}
         <a href="https://maxmigold.com/" target="_blank">
           Max-Migold

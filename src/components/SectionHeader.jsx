@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-const SectionHeader = ({ className }) => {
+const SectionHeader = ({ className, sectionNumber, title }) => {
   return (
     <h2 className={`${className}__heading`}>
-      <span>01.</span>
-      <span>About</span>
+      <span>{sectionNumber}</span>
+      <span>{title}</span>
     </h2>
   );
 };
@@ -12,6 +12,8 @@ const SectionHeader = ({ className }) => {
 SectionHeader.propTypes = {
   //   children: PropTypes.node.isRequired,
   className: PropTypes.string.isRequired,
+  sectionNumber: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default SectionHeader;
