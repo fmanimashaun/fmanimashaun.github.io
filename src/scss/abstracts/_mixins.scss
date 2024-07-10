@@ -1,4 +1,5 @@
 @use "./colors" as colors;
+@use "sass:color";
 
 @mixin btn(
   $color: colors.$accent-color,
@@ -26,5 +27,28 @@
 
   &:focus {
     outline: 2px solid colors.$white;
+  }
+}
+
+@mixin before-heading($content, $color) {
+  &::before {
+    content: $content;
+    display: inline-block; /* Ensure it stays on the same line */
+    height: auto;
+    color: $color;
+    margin-right: 0.5rem;
+  }
+}
+
+@mixin after-heading($color) {
+  &::after {
+    content: "";
+    display: inline-block; /* Ensure it stays on the same line */
+    flex-grow: 1;
+    height: 1px;
+    max-width: 300px;
+    background-color: color.adjust($color, $lightness: 50%);
+    opacity: 0.2;
+    margin-left: 0.5rem;
   }
 }

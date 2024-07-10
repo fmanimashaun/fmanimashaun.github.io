@@ -1,18 +1,11 @@
 import PropTypes from "prop-types";
 
-const SectionHeader = ({ className, sectionNumber, title }) => {
-  return (
-    <h2 className={`${className}__heading`}>
-      <span>{sectionNumber}</span>
-      <span>{title}</span>
-    </h2>
-  );
+const SectionHeader = ({ title }) => {
+  return <h2 className={`${title.toLowerCase()}__heading`}>{title}</h2>;
 };
 
 SectionHeader.propTypes = {
   //   children: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired,
-  sectionNumber: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
