@@ -1,5 +1,4 @@
 @use "./colors" as colors;
-@use "sass:color";
 
 @mixin btn(
   $color: colors.$accent-color,
@@ -47,7 +46,7 @@
     flex-grow: 1;
     height: 1px;
     max-width: 300px;
-    background-color: color.adjust($color, $lightness: 50%);
+    background-color: $color;
     opacity: 0.2;
     margin-left: 0.5rem;
   }

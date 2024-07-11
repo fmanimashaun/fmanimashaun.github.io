@@ -76,7 +76,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
           background-color: colors.$white;
           bottom: -5px;
           left: 0;
-          transition: width 0.3s ease-in-out;
+          transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 
           @media screen and (max-width: 1024px) {
             display: none;
@@ -109,6 +109,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
               background-color: colors.$white;
               bottom: -5px;
               left: 0;
+;
               transition: width 0.3s ease-in-out;
             }
           }

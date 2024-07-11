@@ -16,6 +16,6 @@
     line-height: 1.185;
 
     @include mixins.before-heading("04.", color.$accent-color);
-    @include mixins.after-heading(color.$secondary-bg-color);
+    @include mixins.after-heading(color.$accent-color);
   }
 }

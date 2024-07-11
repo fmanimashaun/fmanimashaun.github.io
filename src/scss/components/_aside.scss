@@ -1,5 +1,4 @@
 @use "../abstracts/colors" as colors;
-@use "sass:color";
 
 $off-desktop-inline: clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
 $off-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
@@ -45,8 +44,7 @@ $off-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
       display: block;
       height: 167px;
       width: 2px;
-      background-color: color.adjust(colors.$accent-color, $lightness: 50%);
-      opacity: 0.2;
+      background-color: colors.$accent-color;
     }
   }
 
