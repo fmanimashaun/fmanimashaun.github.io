@@ -10,6 +10,7 @@ import { FaCodepen } from "react-icons/fa";
 import Aside from "./components/Aside";
 import SectionHeader from "./components/SectionHeader";
 import WelcomeScreen from "./components/WelcomeScreen";
+import Intro from "./components/Intro";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,40 +53,41 @@ const App = () => {
           <Aside className="left">
             <div className="aside__icons">
               <a href="https://github.com/fmanimashaun" target="_blank">
-                <FiGithub size={25} />
+                <FiGithub size={20} />
               </a>
               <a href="https://www.instagram.com/fmanimashaun/" target="_blank">
-                <FiInstagram size={25} />
+                <FiInstagram size={20} />
               </a>
               <a href="https://twitter.com/fmanimashaun" target="_blank">
-                <FiTwitter size={25} />
+                <FiTwitter size={20} />
               </a>
               <a
                 href="https://www.linkedin.com/in/fmanimashaun/"
                 target="_blank"
               >
-                <AiOutlineLinkedin size={25} />
+                <AiOutlineLinkedin size={20} />
               </a>
               <a href="https://codepen.io/fmanimashaun" target="_blank">
-                <FaCodepen size={25} />
+                <FaCodepen size={20} />
               </a>
             </div>
           </Aside>
           <main className="main">
             <div className="main__wrapper">
+              <Intro />
               <div id="about" className="about">
-                <SectionHeader  title="About" />
+                <SectionHeader title="About" />
               </div>
               <div id="experience" className="experience">
-                <SectionHeader title="Experience"/>
+                <SectionHeader title="Experience" />
               </div>
 
               <div id="work" className="work">
-                <SectionHeader title="Work"/>
+                <SectionHeader title="Work" />
               </div>
 
               <div id="contact" className="contact">
-                <SectionHeader title="Contact"/>
+                <SectionHeader title="Contact" />
               </div>
             </div>
 
@@ -97,8 +99,11 @@ const App = () => {
           </main>
           <Aside className="right">
             <div className="aside__link">
-              <a href="https://fmanimashaun.com/" className="website">
-                https://fmanimashaun.com/
+              <a
+                href="mailto:fisayo.animashaun@outlook.com"
+                className="website"
+              >
+                fmanimashaun.github.io
               </a>
             </div>
           </Aside>

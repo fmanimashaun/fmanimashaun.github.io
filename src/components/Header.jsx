@@ -8,6 +8,8 @@ import Logo from "./Logo";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [hoverIndex, setHoverIndex] = useState(null); // State to track hovered item
+  const [hoverOff, setHoverOff] = useState(false); // State to track hover off
 
   const width = useWindowWidth();
 
@@ -35,30 +37,37 @@ const Header = () => {
       >
         <nav className="header__nav">
           <ul className="header__nav-list">
-            <li className="header__nav-item">
-              <a href="#about" onClick={handleScrollClick}>
-                <span>01.</span>
-                <span>About</span>
-              </a>
-            </li>
-            <li className="header__nav-item">
-              <a href="#experience" onClick={handleScrollClick}>
-                <span>02.</span>
-                <span>Experience</span>
-              </a>
-            </li>
-            <li className="header__nav-item">
-              <a href="#work" onClick={handleScrollClick}>
-                <span>03.</span>
-                <span>work</span>
-              </a>
-            </li>
-            <li className="header__nav-item">
-              <a href="#contact" onClick={handleScrollClick}>
-                <span>04.</span>
-                <span>Contact</span>
-              </a>
-            </li>
+            {["about", "experience", "work", "contact"].map((section, index) => (
+              <li
+                className="header__nav-item"
+                key={section}
+                onMouseEnter={() => {
+                  if (hoverOff) {
+                    setHoverOff(false);
+                  }
+                  setHoverIndex(index);
+                }}
+                onMouseLeave={() => {
+                  setHoverOff(true);
+                  setHoverIndex(index);
+                }}
+              >
+                <a
+                  href={`#${section}`}
+                  onClick={handleScrollClick}
+                  className={
+                    hoverIndex === index && !hoverOff
+                      ? "hover"
+                      : hoverIndex === index && hoverOff
+                      ? "hover-off"
+                      : "hover-off"
+                  }
+                >
+                  <span>{`0${index + 1}.`}</span>
+                  <span>{section.charAt(0).toUpperCase() + section.slice(1)}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <ButtonLink

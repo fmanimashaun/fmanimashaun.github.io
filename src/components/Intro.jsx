@@ -4,23 +4,24 @@ import Resume from "@/data/resume.pdf";
 const Intro = () => {
   return (
     <div className="intro">
-      <p>Hi, My Name is</p>
-      <h1>Engr. Animashaun F.M</h1>
-      <p>...Building the Next Big Thing</p>
-      <p>
-        I&apos;m a software engineer specializing in building internal software
-        solutions to address evolving business needs. Currently, I&apos;m focused on
-        crafting impactful applications at{" "}
-        <a href="https://maxmigold.com/" target="_blank">
-          Max-Migold
-        </a>
-        , drawing on my unique background in facilities management for a
-        problem-solving edge.
+      <p className="intro__greeting">Hi, My Name is</p>
+      <h1 className="intro__name">
+        Engr. Animashaun F.M (CFM®, FMP®, MNSE, COREN)
+      </h1>
+      <p className="intro__tagline">
+        I build innovative solutions for the web and facilities management.
       </p>
-      <ButtonLink
-        href={Resume}
-        className="header__download"
-      >
+      <p className="intro__description">
+        I’m a full-stack developer skilled in React, Typescript, Ruby, PHP,
+        Node.js, Ruby on Rails, and AWS cloud services. Currently, I develop
+        internal software at Max-Migold and Star University, where I also manage
+        Moodle LMS on AWS cloud for high availability and customization.
+        Additionally, I’m building a matchmaking service platform for working
+        professionals at JoyMatcher. My ten years of facilities management
+        experience give me a unique problem-solving edge, bridging technology
+        and operational efficiency.
+      </p>
+      <ButtonLink href={Resume} className="intro__download">
         Resume
       </ButtonLink>
     </div>

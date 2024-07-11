@@ -66,25 +66,33 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
         justify-content: center;
         gap: 0.5rem;
         text-decoration: none;
-        color: colors.$white;
+        color: colors.$off-white;
 
         &::before {
           content: "";
           position: absolute;
           width: 0;
           height: 2px;
-          background-color: colors.$white;
+          background-color: colors.$off-white;
           bottom: -5px;
           left: 0;
-          transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+          transition: width 0.3s ease-in-out, left 0.3s ease-in-out, right 0.3s ease-in-out;
 
           @media screen and (max-width: 1024px) {
             display: none;
           }
         }
 
-        &:hover::before {
+        &.hover::before {
           width: 100%;
+          left: 0;
+          right: auto;
+        }
+
+        &.hover-off::before {
+          left: auto;
+          right: 0;
+          width: 0;
         }
 
         & > span:first-child {
@@ -106,10 +114,9 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
               position: absolute;
               width: 0;
               height: 2px;
-              background-color: colors.$white;
+              background-color: colors.$off-white;
               bottom: -5px;
               left: 0;
-;
               transition: width 0.3s ease-in-out;
             }
           }
