@@ -1,9 +1,18 @@
 @use "../abstracts/colors" as colors;
 
-
 .footer {
-    display: flex;
-    justify-content: center;
-    background-color: red;
-    padding-block: 50px;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+  justify-content: center;
+	gap: 1rem;
+  padding-block: 50px 100px;
+
+	a {
+		text-decoration: none;
+		color: colors.$off-white;
+		&:hover, &:focus {
+			color: colors.$accent-color;
+		}
+	}
 }
