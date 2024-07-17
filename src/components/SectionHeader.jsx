@@ -5,7 +5,6 @@ const SectionHeader = ({ title }) => {
 };
 
 SectionHeader.propTypes = {
-  //   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
 };
 

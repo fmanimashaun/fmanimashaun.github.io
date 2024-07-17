@@ -15,18 +15,18 @@
     &.right {
       right: calc($off-mobile-inline - 16.59px);
 
-      @media screen and (min-width: 1024px) {
-        right: calc($off-desktop-inline - 16.59px);
-      }
+      // @media screen and (min-width: 1024px) {
+      //   right: calc($off-desktop-inline - 16.59px);
+      // }
     }
 
     &.left {
       left: calc($off-mobile-inline - 25px);
       width: 25px;
 
-      @media screen and (min-width: 1024px) {
-        left: calc($off-desktop-inline - 25px);
-      }
+      // @media screen and (min-width: 1024px) {
+      //   left: calc($off-desktop-inline - 25px);
+      // }
     }
 
     &__icons,

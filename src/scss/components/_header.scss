@@ -105,7 +105,7 @@ $line-height: 1.185;
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 35px clamp(2.8125rem, -2.5721rem + 8.4135vw, 5rem);
+    // padding: 35px clamp(2.8125rem, -2.5721rem + 8.4135vw, 5rem);
 
     &__wrapper {
       position: static;

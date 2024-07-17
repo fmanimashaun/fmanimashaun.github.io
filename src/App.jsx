@@ -11,6 +11,7 @@ import Aside from "./components/Aside";
 import SectionHeader from "./components/SectionHeader";
 import WelcomeScreen from "./components/WelcomeScreen";
 import Intro from "./components/Intro";
+import AboutContent from "./components/AboutContent";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,6 +78,7 @@ const App = () => {
               <Intro />
               <div id="about" className="about">
                 <SectionHeader title="About" />
+                <AboutContent />
               </div>
               <div id="experience" className="experience">
                 <SectionHeader title="Experience" />
