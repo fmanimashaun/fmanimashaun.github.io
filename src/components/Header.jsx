@@ -32,8 +32,9 @@ const Header = () => {
   return (
     <header className="header">
       <Logo />
-      <div
-        className={`header__wrapper ${showMenu && width < 1025 ? "open" : ""}`}
+    {width > 1023 && (
+        <div
+        className={`header__wrapper ${showMenu && width < 1024 ? "open" : ""}`}
       >
         <nav className="header__nav">
           <ul className="header__nav-list">
@@ -78,7 +79,8 @@ const Header = () => {
           Resume
         </ButtonLink>
       </div>
-      {width < 1025 && (
+    )}
+      {width < 1024 && (
         <>
           {!showMenu && (
             <button className="header__menu-btn" onClick={handleMenu}>

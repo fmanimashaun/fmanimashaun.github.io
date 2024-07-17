@@ -5,21 +5,16 @@ const Intro = () => {
   return (
     <div className="intro">
       <p className="intro__greeting">Hi, My Name is</p>
-      <h1 className="intro__name">
-        Engr. Animashaun F.M (CFM®, FMP®, MNSE, COREN)
-      </h1>
+      <h2 className="intro__name">Engr. Animashaun F.M</h2>
       <p className="intro__tagline">
-        I build innovative solutions for the web and facilities management.
+        Full-stack Developer | React, Javascript & Typescript, Ruby, PHP, Node, Rails |
+        Moodle LMS Expert | Aspiring DevOps Engineer | MNSE, COREN, FM, CFM Certified
       </p>
       <p className="intro__description">
-        I’m a full-stack developer skilled in React, Typescript, Ruby, PHP,
-        Node.js, Ruby on Rails, and AWS cloud services. Currently, I develop
-        internal software at Max-Migold and Star University, where I also manage
-        Moodle LMS on AWS cloud for high availability and customization.
-        Additionally, I’m building a matchmaking service platform for working
-        professionals at JoyMatcher. My ten years of facilities management
-        experience give me a unique problem-solving edge, bridging technology
-        and operational efficiency.
+        I&apos;m a full-stack developer specializing in web, mobile and cloud
+        solutions. Currently, I&apos;m focused on internal software development at{" "}
+        <a href="#" target="_blank">Max-Migold</a> and <a href="#" target="_blank">Star University</a>, and building <a href="#" target="_blank">JoyMatcher</a>, a professional
+        matchmaking platform.
       </p>
       <ButtonLink href={Resume} className="intro__download">
         Resume

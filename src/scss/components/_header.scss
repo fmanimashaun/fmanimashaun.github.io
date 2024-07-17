@@ -1,102 +1,57 @@
-@use "../abstracts/mixins" as mixins;
-@use "../abstracts/colors" as colors;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
 
 // Variables
 $nav-gap: clamp(1.5rem, 1.0714rem + 0.8929vi, 1.875rem);
 $line-height: 1.185;
-$header-padding-desktop: 35px clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
-$header-padding-mobile: 35px clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
-$btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $header-padding-desktop;
-
-  @media screen and (max-width: 1024px) {
-    position: relative;
-    padding: $header-padding-mobile;
-  }
+  padding: 35px 25px;
+  position: relative;
 
   &__wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    z-index: 2;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: $nav-gap;
-    margin-left: auto;
+    gap: 60px;
+    min-height: 100vh;
+    background-color: $secondary-bg-color;
+    transition: left 0.75s ease-in-out;
 
-    @media screen and (max-width: 1024px) {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      z-index: 2;
-      flex-direction: column;
-      justify-content: center;
-      gap: 60px;
-      min-height: 100vh;
-      background-color: colors.$secondary-bg-color;
-      transition: left 0.75s ease-in-out;
-
-      &.open {
-        left: 0;
-      }
+    &.open {
+      left: 0;
     }
   }
 
   &__nav {
-    margin-left: auto;
-    @media screen and (max-width: 1024px) {
-      margin-left: 0;
-    }
     &-list {
       display: flex;
-      gap: $nav-gap;
-
-      @media screen and (max-width: 1024px) {
-        flex-direction: column;
-        gap: 60px;
-      }
+      flex-direction: column;
+      gap: 60px;
     }
+
     &-item {
       a {
-        position: relative;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
         text-decoration: none;
-        color: colors.$off-white;
-
-        &::before {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 2px;
-          background-color: colors.$off-white;
-          bottom: -5px;
-          left: 0;
-          transition: width 0.3s ease-in-out, left 0.3s ease-in-out, right 0.3s ease-in-out;
-
-          @media screen and (max-width: 1024px) {
-            display: none;
-          }
-        }
-
-        &.hover::before {
-          width: 100%;
-          left: 0;
-          right: auto;
-        }
-
-        &.hover-off::before {
-          left: auto;
-          right: 0;
-          width: 0;
-        }
+        color: $off-white;
 
         & > span:first-child {
-          color: colors.$accent-color;
+          color: $accent-color;
           font-weight: 700;
           font-size: 1.25rem;
           line-height: $line-height;
@@ -106,29 +61,23 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
           font-weight: 500;
           font-size: 1rem;
           line-height: $line-height;
+          position: relative;
 
-          @media screen and (max-width: 1024px) {
-            position: relative;
-            &::before {
-              content: "";
-              position: absolute;
-              width: 0;
-              height: 2px;
-              background-color: colors.$off-white;
-              bottom: -5px;
-              left: 0;
-              transition: width 0.3s ease-in-out;
-            }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: $off-white;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
           }
         }
 
-        @media screen and (max-width: 1024px) {
-          flex-direction: column;
-
-          &:hover {
-            & > span:last-child::before {
-              width: 100%;
-            }
+        &:hover {
+          & > span:last-child::before {
+            width: 100%;
           }
         }
       }
@@ -136,7 +85,7 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
   }
 
   &__download {
-    @include mixins.btn($size: $btn-text-size);
+    @include btn($size: $btn-text-size);
   }
 
   &__menu-btn {
@@ -152,6 +101,66 @@ $btn-text-size: clamp(0.75rem, 0.5739rem + 0.7512vi, 1.25rem);
       right: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
       display: block;
       z-index: 3;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 35px clamp(2.8125rem, -2.5721rem + 8.4135vw, 5rem);
+
+    &__wrapper {
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+      min-height: auto;
+      gap: $nav-gap;
+      margin-left: auto;
+    }
+
+    &__nav {
+      margin-left: auto;
+
+      &-list {
+        flex-direction: row;
+        gap: $nav-gap;
+      }
+
+      &-item {
+        a {
+          position: relative;
+          flex-direction: row;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: $off-white;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out, right 0.3s ease-in-out;
+          }
+
+          &.hover::before {
+            width: 100%;
+            left: 0;
+            right: auto;
+          }
+
+          &.hover-off::before {
+            left: auto;
+            right: 0;
+            width: 0;
+          }
+
+          & > span:last-child::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__menu-btn {
+      display: none;
     }
   }
 }

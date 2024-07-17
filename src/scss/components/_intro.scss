@@ -1,17 +1,56 @@
-@use "../abstracts/colors" as colors;
-@use "../abstracts/functions" as funcs;
-
+@use "../abstracts/variables" as *;
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 
 .intro {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    color: colors.$white;
-    font-size: 1.5rem;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: $white;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.3;
+  padding-block: 1.5rem 5rem;
 
-    &__tagline {
-        color: colors.$off-white;
-        font-size: 1.5rem;
+  &__greeting {
+    color: $accent-color;
+    word-spacing: 0.5rem;
+    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  }
+
+  &__name {
+    font-size: clamp(1.75rem, 0.7362rem + 4.3257vw, 2.8125rem);
+    font-weight: 700;
+    line-height: 1;
+
+    @media screen and (min-width: 768px) {
+      font-size: clamp(2.8125rem, -1.1161rem + 8.1845vw, 6.25rem);
     }
+  }
+
+  &__tagline {
+    color: $white;
+    font-weight: 400;
+    font-style: italic;
+    max-inline-size: 65ch;
+    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  }
+
+  &__description {
+    color: $off-white;
+    max-inline-size: 50ch;
+    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+		line-height: 1.65;
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
+
+  &__download {
+    @include btn($size: $btn-text-size);
+    width: fit-content;
+  }
 }

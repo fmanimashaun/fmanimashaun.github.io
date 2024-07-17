@@ -1,68 +1,66 @@
-@use "../abstracts/colors" as colors;
-
-$off-desktop-inline: clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
-$off-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
+@use "../abstracts/variables" as *;
+@use "../abstracts/colors" as *;
 
 .aside {
-  position: fixed;
-  width: fit-content;
-  display: none;
-  justify-content: center;
-  align-items: flex-end;
-  min-height: 100vh;
+  display: none; // Hidden by default on mobile
 
   @media screen and (min-width: 768px) {
+    position: fixed;
+    width: fit-content;
     display: flex;
-  }
-
-  &.right {
-    right: calc($off-desktop-inline - 16.59px);
-
-    @media screen and (max-width: 1024px) {
-      right: calc($off-mobile-inline - 16.59px);
-    }
-  }
-
-  &.left {
-    left: calc($off-desktop-inline - 25px);
-    width: 25px;
-
-    @media screen and (max-width: 1024px) {
-      left: calc($off-mobile-inline - 25px);
-    }
-  }
-
-  &__icons,
-  &__link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 1.25rem;
-    &::after {
-      content: "";
+    align-items: flex-end;
+    min-height: 100vh;
+
+    &.right {
+      right: calc($off-mobile-inline - 16.59px);
+
+      @media screen and (min-width: 1024px) {
+        right: calc($off-desktop-inline - 16.59px);
+      }
+    }
+
+    &.left {
+      left: calc($off-mobile-inline - 25px);
+      width: 25px;
+
+      @media screen and (min-width: 1024px) {
+        left: calc($off-desktop-inline - 25px);
+      }
+    }
+
+    &__icons,
+    &__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      &::after {
+        content: "";
+        display: block;
+        height: 167px;
+        width: 2px;
+        background-color: $accent-color;
+      }
+    }
+
+    a {
       display: block;
-      height: 167px;
-      width: 2px;
-      background-color: colors.$accent-color;
-    }
-  }
+      color: $off-white;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 14px;
+      transition: color 0.3s ease, transform 0.3s ease;
 
-  a {
-    display: block;
-    color: colors.$off-white;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    transition: color 0.3s ease, transform 0.3s ease;
+      &:hover {
+        color: $accent-color;
+        transform: translateY(-5px);
+      }
 
-    &:hover {
-      color: colors.$accent-color;
-      transform: translateY(-5px);
-    }
-
-    &.website {
-      writing-mode: vertical-rl;
+      &.website {
+        writing-mode: vertical-rl;
+      }
     }
   }
 }

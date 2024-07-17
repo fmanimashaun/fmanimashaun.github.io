@@ -1,13 +1,18 @@
-$main-padding-desktop-inline: clamp(3.125rem, -0.4464rem + 7.4405vi, 6.25rem);
-$main-padding-mobile-inline: clamp(1.875rem, 0.6823rem + 5.0891vi, 3.125rem);
+@use "../abstracts/variables" as *;
+
 .main {
   display: flex;
   justify-content: space-between;
-  padding-inline: $main-padding-desktop-inline;
+  padding-inline: calc($off-mobile-inline - 8px);
 
-  @media screen and (max-width: 1024px) {
-    padding-inline: $main-padding-mobile-inline;
+  @media screen and (min-width: 768px) {
+    padding-inline: 100px;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding-inline: 150px;
+  }
+
   &__wrapper {
     flex: auto;
   }

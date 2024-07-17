@@ -1,5 +1,5 @@
-@use "../abstracts/colors" as colors;
-@use "../abstracts/mixins" as mixins;
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 
 .about {
   min-height: 50vh;
@@ -15,7 +15,7 @@
     font-size: 30px;
     line-height: 1.185;
 
-    @include mixins.before-heading("01.", colors.$accent-color);
-    @include mixins.after-heading(colors.$accent-color);
+    @include before-heading("01.", $accent-color);
+    @include after-heading($accent-color);
   }
 }
