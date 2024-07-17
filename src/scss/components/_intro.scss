@@ -40,7 +40,7 @@
     color: $off-white;
     max-inline-size: 50ch;
     font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
-		line-height: 1.65;
+    line-height: 1.65;
 
     a {
       color: $accent-color;
@@ -50,7 +50,7 @@
   }
 
   &__download {
-    @include btn($size: $btn-text-size);
     width: fit-content;
+    @include btn($size: $btn-text-size);
   }
 }
