@@ -30,24 +30,35 @@ const AboutContent = () => {
         </p>
         <p>Here are a few technologies I’ve been working with recently:</p>
         <div className="about__tech">
-          <ul>
-            <li>gsgsgs</li>
-            <li>gsgsgs</li>
-            <li>gsgsg</li>
-            <li>gsgsg</li>
-          </ul>
-          <ul>
-            <li>gsgsgs</li>
-            <li>gsgsgs</li>
-            <li>gsgsg</li>
-            <li>gsgsg</li>
-          </ul>
-          <ul>
-            <li>gsgsgs</li>
-            <li>gsgsgs</li>
-            <li>gsgsg</li>
-            <li>gsgsg</li>
-          </ul>
+        <ul>
+  <li>JavaScript (ES6)</li>
+  <li>React</li>
+  <li>React Bootstrap</li>
+  <li>Redux Toolkit</li>
+  <li>React Router</li>
+  <li>React Testing Library</li>
+  <li>Node (Express.js)</li>
+</ul>
+
+<ul>
+  <li>Ruby on Rails</li>
+  <li>RSpec</li>
+  <li>SASS</li>
+  <li>Tailwind CSS</li>
+  <li>Webpack/Vite</li>
+  <li>Jest</li>
+  <li>ESLint</li>
+</ul>
+
+<ul>
+  <li>Rubocop</li>
+  <li>Stylelint</li>
+  <li>Git/GitHub</li>
+  <li>PostgreSQL</li>
+  <li>MongoDB</li>
+  <li>AWS/GCP</li>
+  <li>Figma</li>
+</ul>
         </div>
       </div>
       <div className="about__wrapper-right">
