@@ -1,47 +1,37 @@
 @use "../abstracts/colors" as *;
 
 .logo {
-  position: relative; 
+  position: relative;
+  z-index: 100;
   width: 50px;
   height: 50px;
   cursor: pointer;
 
   &__hexagon {
+    position: relative;
     width: 50px;
     height: 50px;
-    position: absolute;
-    transition: top 0.3s ease, left 0.3s ease; 
-  }
-  &__hexagon:first-child {
-    top: 0; 
-    left: 0;
-  }
-  &__hexagon:last-child {
-    top: 0;
-    left: 0;
-    z-index: -1;
+
+    &-path {
+      fill: $primary-bg-color;
+      stroke: $accent-color;
+      stroke-width: 5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-dasharray: 300;
+      transition: all 0.3s ease;
+    }
   }
 
-  &__hexagon-path {
-    fill: rgba(34, 33, 47, 1);
-    stroke: #00b3a0;
-    stroke-width: 5;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    stroke-dasharray: 300;
-  }
-  &__hexagon-path.fill {
-    fill: #00b3a0;
-  }
   &__letter {
-    fill: #00b3a0;
+    fill: $accent-color;
     font-weight: bold;
     font-size: 2.5rem;
     opacity: 1;
   }
-
-  &:has(:hover) .logo__hexagon:first-child {
-    top: -2px;
-    left: -2px;
+    
+  &:has(:hover) &__hexagon {
+    transform: translate(-2px, -2px);
+    filter: drop-shadow(2px 2px $accent-color);
   }
 }
