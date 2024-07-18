@@ -1,9 +1,12 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
 
 .contact {
-  min-height: 50vh;
-  border: 1px solid red;
+  margin-inline: auto;
+  text-align: center;
+  width: fit-content;
+  margin-block: 100px 100px;
 
   &__heading {
     position: relative;
@@ -11,11 +14,35 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    font-size: 30px;
-    line-height: 1.185;
+    gap: 0.5rem;
+    font-size: 16px;
+    line-height: 1.65;
+    font-weight: 700;
+    color: $accent-color;
+    margin-block-end: 1.5rem;
 
     @include before-heading("04.", $accent-color);
-    @include after-heading($accent-color);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-inline-size: 50ch;
+    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+    line-height: 1.65;
+  }
+
+  &__subheading {
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  &__email {
+    width: fit-content;
+    @include btn($size: $btn-text-size);
   }
 }

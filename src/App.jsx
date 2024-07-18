@@ -12,6 +12,7 @@ import SectionHeader from "./components/SectionHeader";
 import WelcomeScreen from "./components/WelcomeScreen";
 import Intro from "./components/Intro";
 import AboutContent from "./components/AboutContent";
+import ContactContent from "./components/ContactContent";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -90,6 +91,7 @@ const App = () => {
 
               <div id="contact" className="contact">
                 <SectionHeader title="Contact" />
+                <ContactContent />
               </div>
             </div>
 
