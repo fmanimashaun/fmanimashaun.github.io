@@ -45,8 +45,8 @@ const AboutContent = () => {
         <p>Here are a few technologies I’ve been working with recently:</p>
         <div className="about__tech">
           <ul>
-            <li>JavaScript (ES6)</li>
-            <li>React</li>
+            <li>JavaScript/Typescript</li>
+            <li>React/React Native</li>
             <li>React Bootstrap</li>
             <li>Redux Toolkit</li>
             <li>React Router</li>
