@@ -10,7 +10,7 @@ const ContactContent = () => {
         my inbox is always open. I’ll try my best to get back to you promptly!
       </p>
 
-			<ButtonLink link="mailto:fisayo.animashaun@outlook.com"  className="contact__email">Say Hello</ButtonLink>
+			<ButtonLink href="mailto:fisayo.animashaun@outlook.com"  className="contact__email">Say Hello</ButtonLink>
     </div>
   );
 };

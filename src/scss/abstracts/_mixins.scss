@@ -33,10 +33,37 @@
   }
 }
 
+
+@mixin btn-tab(
+  $color: $accent-color,
+  $bg-color: transparent,
+  $bg-hover: $secondary-bg-color,
+  $padding-block: 15px,
+  $padding-inline: 30px,
+  $size: 1.25rem
+) {
+  display: inline-block;
+  position: relative;
+  color: $color;
+  border: none;
+  background-color: $bg-color;
+  padding: $padding-block $padding-inline;
+  text-decoration: none;
+  font-size: $size;
+  line-height: 1.185;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover, &:focus {
+    background-color: rgba($bg-hover, $alpha: 0.7);
+  }
+}
+
 @mixin before-heading($content, $color) {
   &::before {
     content: $content;
-    display: inline-block; /* Ensure it stays on the same line */
+    display: inline-block;
     height: auto;
     color: $color;
     margin-right: 0.5rem;

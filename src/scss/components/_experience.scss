@@ -3,7 +3,6 @@
 
 .experience {
   min-height: 50vh;
-  border: 1px solid red;
 
   &__heading {
     position: relative;
@@ -17,5 +16,35 @@
 
     @include before-heading("02.", $accent-color);
     @include after-heading($accent-color);
+  }
+
+  &__wrapper {
+    padding-block: 30px 80px;
+    display: flex;
+  }
+
+  &__tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1px;
+      width: 1px;
+      height: 100%;
+      background-color: $secondary-bg-color;
+    }
+  }
+
+  &__tab-item {
+    @include btn-tab;
+  }
+
+  &__marker {
+    background-color: $accent-color;
   }
 }

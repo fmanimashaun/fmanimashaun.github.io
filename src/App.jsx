@@ -13,6 +13,7 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import Intro from "./components/Intro";
 import AboutContent from "./components/AboutContent";
 import ContactContent from "./components/ContactContent";
+import ExperienceContent from "./components/ExperienceContent";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -78,19 +79,22 @@ const App = () => {
             <div className="main__wrapper">
               <Intro />
               <div id="about" className="about">
-                <SectionHeader title="About" />
+                <SectionHeader title="About">About Me</SectionHeader>
                 <AboutContent />
               </div>
               <div id="experience" className="experience">
-                <SectionHeader title="Experience" />
+                <SectionHeader title="Experience">
+                  Where I’ve Worked
+                </SectionHeader>
+                <ExperienceContent />
               </div>
 
               <div id="work" className="work">
-                <SectionHeader title="Work" />
+                <SectionHeader title="Work">Some Things I’ve Built</SectionHeader>
               </div>
 
               <div id="contact" className="contact">
-                <SectionHeader title="Contact" />
+                <SectionHeader title="Contact">What’s Next?</SectionHeader>
                 <ContactContent />
               </div>
             </div>
