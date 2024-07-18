@@ -5,6 +5,8 @@
   width: 100%;
   max-inline-size: 1000px;
   margin-inline: auto;
+  padding-block-end: 5rem;
+  min-height: 100vh;
   &__heading {
     position: relative;
     display: flex;

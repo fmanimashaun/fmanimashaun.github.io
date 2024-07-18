@@ -2,7 +2,10 @@
 @use "../abstracts/mixins" as *;
 
 .experience {
-  min-height: 50vh;
+  width: 100%;
+  max-inline-size: 1000px;
+  margin-inline: auto;
+  padding-block-end: 5rem;
 
   &__heading {
     position: relative;

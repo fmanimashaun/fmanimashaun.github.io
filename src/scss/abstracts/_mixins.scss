@@ -39,7 +39,6 @@
   $bg-color: transparent,
   $bg-hover: $secondary-bg-color,
   $padding-block: 15px,
-  $padding-inline: 30px,
   $size: 1.25rem
 ) {
   display: inline-block;
@@ -47,8 +46,9 @@
   color: $color;
   border: none;
   background-color: $bg-color;
-  padding: $padding-block $padding-inline;
+  padding-block: $padding-block;
   text-decoration: none;
+  text-align: left;
   font-size: $size;
   line-height: 1.185;
   font-weight: 700;
