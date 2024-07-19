@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 
-function useWindowWidth() {
+/**
+ * Custom hook to track the width of the window. Updates the width value on window resize.
+ *
+ * @returns {number} - The current width of the window.
+ */
+
+const useWindowWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {

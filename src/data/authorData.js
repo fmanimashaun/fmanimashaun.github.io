@@ -3,8 +3,8 @@ export const authorData = {
     {
       id: 1,
       company: "Max-Migold",
-      position: "Team Lead/Full Stack Developer",
-      startDate: "2022",
+      position: "Tech Advisor",
+      startDate: "Jan. 2022",
       endDate: "Present",
       description: [
         "Lead a team of 3 software engineers and 3 product designers in developing internal software solutions and client projects.",
@@ -16,8 +16,8 @@ export const authorData = {
     {
       id: 2,
       company: "JoyMatcher",
-      position: "Full Stack Developer(Freelance)",
-      startDate: "2024",
+      position: "Full-Stack Developer(Freelance)",
+      startDate: "Apr, 2024",
       endDate: "Present",
       description: [
         "Lead the development of a professional matchmaking platform, utilizing Rails for backend and React for frontend.",
@@ -29,8 +29,8 @@ export const authorData = {
     {
       id: 3,
       company: "Star University",
-      position: "Full Stack Developer (Part-time)",
-      startDate: "2024",
+      position: "Full-Stack Developer (Part-time)",
+      startDate: "Jul, 2024",
       endDate: "Present",
       description: [
         "Spearhead the redesign and development of the university's main website, enhancing user experience and functionality.",
@@ -45,9 +45,9 @@ export const authorData = {
     {
       id: 4,
       company: "Microverse",
-      position: "Full Stack Developer (Trainee)",
-      startDate: "2022",
-      endDate: "2024",
+      position: "Full-Stack Developer (Trainee)",
+      startDate: "Sept, 2022",
+      endDate: "Feb, 2024",
       description: [
         "Completed an intensive, full-time full-stack engineering program, dedicating over 1,500 hours to mastering both front-end and back-end technologies",
         "Developed and deployed 20+ web applications using React, Ruby on Rails, JavaScript, HTML/CSS, and SQL",

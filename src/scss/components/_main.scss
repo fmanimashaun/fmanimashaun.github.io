@@ -3,15 +3,6 @@
 .main {
   display: flex;
   justify-content: space-between;
-  padding-inline: calc($off-mobile-inline - 8px);
-
-  @media screen and (min-width: 768px) {
-    padding-inline: 100px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    padding-inline: 150px;
-  }
 
   &__wrapper {
     flex: auto;

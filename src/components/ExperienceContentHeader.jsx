@@ -2,29 +2,40 @@ import PropTypes from "prop-types";
 
 import useContainerHeight from "@/hooks/useContainerHeight";
 import Marker from "./Marker";
+// import useActiveButtonWidth from "@/hooks/useActiveButtonWidth";
+import useButtonOffset from "@/hooks/useButtonOffset";
 
 const ExperienceContentHeader = ({ experienceData, index, setTabIndex }) => {
   const [containerRef, height] = useContainerHeight();
+  const [buttonRefs, buttonOffset, activeButtonWidth] = useButtonOffset(index, [
+    experienceData,
+  ]);
 
   return (
-    <div ref={containerRef} className="experience__tabs">
-      <Marker
-        className="experience__marker"
-        height={height / experienceData.length}
-        offset={(index - 1) * (height / experienceData.length)}
-      />
+    <div className="experience-content__tabs">
+      <div ref={containerRef} className="experience-content__tabs-wrapper">
+        <Marker
+          className="experience-content__marker"
+          offset={buttonOffset}
+          width={activeButtonWidth}
+          height={height / experienceData.length}
+          index={index}
+          breakpoint={450}
+        />
 
-      {experienceData.map((data) => (
-        <button
-          key={data.id}
-          className={`experience__tab-item ${
-            index === data.id ? "active" : ""
-          }`}
-          onClick={() => setTabIndex(data.id)}
-        >
-          {data.company}
-        </button>
-      ))}
+        {experienceData.map((data) => (
+          <button
+            key={data.id}
+            ref={(el) => (buttonRefs.current[data.id] = el)}
+            className={`experience-content__tab-item ${
+              index === data.id ? "experience-content__tab-item--active" : ""
+            }`}
+            onClick={() => setTabIndex(data.id)}
+          >
+            {data.company}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

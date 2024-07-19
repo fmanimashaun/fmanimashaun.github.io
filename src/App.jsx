@@ -79,18 +79,24 @@ const App = () => {
             <div className="main__wrapper">
               <Intro />
               <div id="about" className="about">
-                <SectionHeader title="About">About Me</SectionHeader>
-                <AboutContent />
+                <div className="about-wrapper">
+                  <SectionHeader title="About">About Me</SectionHeader>
+                  <AboutContent />
+                </div>
               </div>
               <div id="experience" className="experience">
-                <SectionHeader title="Experience">
-                  Where I’ve Worked
-                </SectionHeader>
-                <ExperienceContent />
+                <div className="experience-wrapper">
+                  <SectionHeader title="Experience">
+                    Where I’ve Worked
+                  </SectionHeader>
+                  <ExperienceContent />
+                </div>
               </div>
 
               <div id="work" className="work">
-                <SectionHeader title="Work">Some Things I’ve Built</SectionHeader>
+                <SectionHeader title="Work">
+                  Some Things I’ve Built
+                </SectionHeader>
               </div>
 
               <div id="contact" className="contact">

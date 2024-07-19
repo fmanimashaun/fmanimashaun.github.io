@@ -35,7 +35,6 @@
 
 
 @mixin btn-tab(
-  $color: $accent-color,
   $bg-color: transparent,
   $bg-hover: $secondary-bg-color,
   $padding-block: 15px,
@@ -43,7 +42,6 @@
 ) {
   display: inline-block;
   position: relative;
-  color: $color;
   border: none;
   background-color: $bg-color;
   padding-block: $padding-block;
