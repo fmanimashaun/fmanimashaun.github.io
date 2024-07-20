@@ -3,21 +3,9 @@
 @use "../abstracts/variables" as *;
 
 .about {
-  padding-inline: calc($off-mobile-inline - 8px);
-
-  @media screen and (min-width: 768px) {
-    padding-inline: 100px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    padding-inline: 150px;
-  }
-
-  &-wrapper {
-    width: 100%;
-    max-width: 900px;
-    margin-inline: auto;
-  }
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
 
   &__heading {
     position: relative;

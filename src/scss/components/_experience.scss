@@ -3,23 +3,9 @@
 @use "../abstracts/variables" as *;
 
 .experience {
-  width: 100vw;
-
-  padding-inline: calc($off-mobile-inline - 8px);
-
-  @include responsive($tablet-breakpoint) {
-    padding-inline: 100px;
-  }
-
-  @include responsive($desktop-breakpoint) {
-    padding-inline: 150px;
-  }
-
-  &-wrapper {
-    width: 100%;
-    max-width: 700px;
-    margin-inline: auto;
-  }
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
 
   &__heading {
     position: relative;
@@ -103,7 +89,6 @@
       flex-direction: column;
       gap: 0.5rem;
       padding-inline-start: 1.5em;
-      max-inline-size: 50ch;
 
       li {
         position: relative;

@@ -1,9 +1,17 @@
 @use "../abstracts/variables" as *;
 
 .main {
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: calc($off-mobile-inline - 8px);
+
+  @media screen and (min-width: 768px) {
+    padding-inline: 100px;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding-inline: 150px;
+  }
+
 }
