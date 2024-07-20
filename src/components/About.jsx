@@ -1,0 +1,39 @@
+import { useEffect, useRef } from "react";
+import SectionHeader from "./SectionHeader";
+import AboutContent from "./AboutContent";
+
+const About = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+  return (
+    <div ref={sectionRef} id="about" className="about">
+      <SectionHeader title="About">About Me</SectionHeader>
+      <AboutContent />
+    </div>
+  );
+};
+
+export default About;

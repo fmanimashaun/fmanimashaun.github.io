@@ -4,6 +4,14 @@
 .work {
   min-height: 50vh;
   border: 1px solid red;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   &__heading {
     position: relative;

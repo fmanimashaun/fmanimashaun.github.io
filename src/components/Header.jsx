@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import Resume from "@/data/resume.pdf";
 import ButtonLink from "./ButtonLink";
@@ -10,6 +10,8 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null); // State to track hovered item
   const [hoverOff, setHoverOff] = useState(false); // State to track hover off
+
+  const headerRef = useRef(null);
 
   const width = useWindowWidth();
 
@@ -26,17 +28,28 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const navItems = headerRef.current.querySelectorAll('.header__nav-item');
+    const downloadBtn = headerRef.current.querySelector('.header__download');
+
+    const nabItemsWithBtn = [...navItems, downloadBtn];
+    nabItemsWithBtn.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`; // Adjust delay as needed
+      item.classList.add('drop-in');
+    });
+  }, []);
+
+  useEffect(() => {
     setShowMenu(false);
   }, [width]);
 
   return (
-    <header className="header">
+    <header ref={headerRef} className="header">
       <Logo />
     {width > 1023 && (
         <div
         className={`header__wrapper ${showMenu && width < 1024 ? "open" : ""}`}
       >
-        <nav className="header__nav">
+        <nav  className="header__nav">
           <ul className="header__nav-list">
             {["about", "experience", "work", "contact"].map((section, index) => (
               <li

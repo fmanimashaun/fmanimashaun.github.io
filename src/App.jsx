@@ -7,13 +7,13 @@ import { FiTwitter } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaCodepen } from "react-icons/fa";
-import Aside from "./components/Aside";
-import SectionHeader from "./components/SectionHeader";
-import WelcomeScreen from "./components/WelcomeScreen";
-import Intro from "./components/Intro";
-import AboutContent from "./components/AboutContent";
-import ContactContent from "./components/ContactContent";
-import ExperienceContent from "./components/ExperienceContent";
+import Aside from "@/components/Aside";
+import SectionHeader from "@/components/SectionHeader";
+import WelcomeScreen from "@/components/WelcomeScreen";
+import Intro from "@/components/Intro";
+import ContactContent from "@/components/ContactContent";
+import ExperienceContent from "@/components/ExperienceContent";
+import About from "./components/About";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,10 +77,7 @@ const App = () => {
           </Aside>
           <main className="main">
             <Intro />
-            <div id="about" className="about">
-              <SectionHeader title="About">About Me</SectionHeader>
-              <AboutContent />
-            </div>
+            <About />
             <div id="experience" className="experience">
               <SectionHeader title="Experience">
                 Where I’ve Worked

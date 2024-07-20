@@ -1,9 +1,36 @@
+import { useEffect, useRef } from "react";
 import ButtonLink from "./ButtonLink";
 import Resume from "@/data/resume.pdf";
 
 const Intro = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+
   return (
-    <div className="intro">
+    <div ref={sectionRef} className="intro">
       <p className="intro__greeting">Hi, My Name is</p>
       <h2 className="intro__name">Engr. Animashaun F.M</h2>
       <p className="intro__tagline">
