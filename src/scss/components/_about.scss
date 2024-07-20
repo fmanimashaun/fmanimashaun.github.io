@@ -3,9 +3,6 @@
 @use "../abstracts/variables" as *;
 
 .about {
-  padding-block-end: 5rem;
-  min-height: 100vh;
-  padding-block: 1.5rem 5rem;
   padding-inline: calc($off-mobile-inline - 8px);
 
   @media screen and (min-width: 768px) {

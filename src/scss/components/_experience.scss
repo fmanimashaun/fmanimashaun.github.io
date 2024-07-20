@@ -2,21 +2,19 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
-$slideBreakpoint: 450px;
-
 .experience {
-  width: 100vi;
-  padding-block-end: 5rem;
+  width: 100vw;
 
   padding-inline: calc($off-mobile-inline - 8px);
 
-  @media screen and (min-width: 768px) {
+  @include responsive($tablet-breakpoint) {
     padding-inline: 100px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @include responsive($desktop-breakpoint) {
     padding-inline: 150px;
   }
+
   &-wrapper {
     width: 100%;
     max-width: 700px;
@@ -44,7 +42,7 @@ $slideBreakpoint: 450px;
     line-height: 1.65;
     padding-block: 16px 50px;
 
-    @media screen and (min-width: $slideBreakpoint) {
+    @include responsive($slideBreakpoint) {
       display: flex;
       flex-direction: row;
       gap: 1rem;
@@ -56,9 +54,10 @@ $slideBreakpoint: 450px;
 
       &-wrapper {
         position: relative;
-        display: flex;
+        display: inline-flex;
         flex-wrap: nowrap;
-        @media screen and (min-width: $slideBreakpoint) {
+
+        @include responsive($slideBreakpoint) {
           width: fit-content;
           flex-direction: column;
         }
@@ -84,7 +83,7 @@ $slideBreakpoint: 450px;
       gap: 1rem;
       padding-inline: calc($off-mobile-inline - 8px);
 
-      @media screen and (min-width: $slideBreakpoint) {
+      @include responsive($slideBreakpoint) {
         padding-inline: 0;
       }
     }
