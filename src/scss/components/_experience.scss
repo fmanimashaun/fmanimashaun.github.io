@@ -36,7 +36,11 @@
 
     &__tabs {
       overflow-x: auto;
-      padding-block: 0.5rem;
+      padding-block: 1rem;
+
+      @include responsive($slideBreakpoint) {
+        padding-block: 0;
+      }
 
       &-wrapper {
         position: relative;
