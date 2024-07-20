@@ -51,15 +51,8 @@ $slideBreakpoint: 450px;
     }
 
     &__tabs {
-      width: 100vi;
       overflow-x: auto;
-      overflow-x: scroll;
       padding-block: 0.5rem;
-
-      @media screen and (min-width: $slideBreakpoint) {
-        width: fit-content;
-        overflow-x: hidden;
-      }
 
       &-wrapper {
         position: relative;
@@ -77,7 +70,7 @@ $slideBreakpoint: 450px;
       @include btn-tab($size: 13px);
 
       &--active {
-        color: $accent-color
+        color: $accent-color;
       }
     }
 
