@@ -3,6 +3,8 @@
 
 .aside {
   display: none; // Hidden by default on mobile
+  opacity: 0; // Start as invisible
+  animation: none; // No animation by default
 
   @media screen and (min-width: 768px) {
     position: fixed;
@@ -11,22 +13,29 @@
     justify-content: center;
     align-items: flex-end;
     min-height: 100vh;
+    animation: fadeIn 0.5s ease forwards; // Apply animation
+
+    &.show {
+      animation-delay: 1s; // Delay before starting the animation
+    }
+
+    // Define the keyframes for the fade-in animation
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
     &.right {
       right: calc($off-mobile-inline - 16.59px);
-
-      // @media screen and (min-width: 1024px) {
-      //   right: calc($off-desktop-inline - 16.59px);
-      // }
     }
 
     &.left {
       left: calc($off-mobile-inline - 25px);
       width: 25px;
-
-      // @media screen and (min-width: 1024px) {
-      //   left: calc($off-desktop-inline - 25px);
-      // }
     }
 
     &__icons,
@@ -41,7 +50,7 @@
         display: block;
         height: 167px;
         width: 2px;
-        background-color: $accent-color;
+        background-color: $off-white;
       }
     }
 
