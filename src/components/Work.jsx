@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import SectionHeader from "./SectionHeader";
-import ExperienceContent from "./ExperienceContent";
 
-const Experience = () => {
+const Work = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -28,12 +27,12 @@ const Experience = () => {
       }
     };
   }, []);
+
   return (
-    <section ref={sectionRef} id="experience" className="experience">
-      <SectionHeader title="Experience">Where I’ve Worked</SectionHeader>
-      <ExperienceContent />
+    <section ref={sectionRef} id="work" className="work">
+      <SectionHeader title="Work">Some Things I’ve Built</SectionHeader>
     </section>
   );
 };
 
-export default Experience;
+export default Work;
