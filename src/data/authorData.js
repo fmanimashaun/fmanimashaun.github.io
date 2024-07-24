@@ -3,7 +3,7 @@ export const authorData = {
     {
       id: 1,
       company: "Max-Migold",
-      position: "Tech Advisor",
+      position: "Technology Advisor",
       startDate: "Jan. 2022",
       endDate: "Present",
       description: [
@@ -26,24 +26,9 @@ export const authorData = {
         "Implement robust security measures to protect user data and ensure platform integrity.",
       ],
     },
-    {
-      id: 3,
-      company: "Star University",
-      position: "Full-Stack Developer (Part-time)",
-      startDate: "Jul, 2024",
-      endDate: "Present",
-      description: [
-        "Spearhead the redesign and development of the university's main website, enhancing user experience and functionality.",
-        "Deploy and customize a Learning Management System (LMS) on AWS, improving online education capabilities.",
-        "Design and develop an Academy Information System (AIS) to streamline administrative processes.",
-        "Integrate LMS and AIS with the new website, creating a cohesive digital ecosystem for the university.",
-        "Manage the deployment of all systems (website, AIS, and LMS) on AWS cloud infrastructure.",
-        "Provide ongoing maintenance and updates to ensure optimal performance and security of all systems.",
-      ],
-    },
 
     {
-      id: 4,
+      id: 3,
       company: "Microverse",
       position: "Full-Stack Developer (Trainee)",
       startDate: "Sept, 2022",

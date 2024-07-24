@@ -1,5 +1,6 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
 
 .work {
   min-height: 50vh;
@@ -14,15 +15,7 @@
   }
 
   &__heading {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-    font-size: 30px;
-    line-height: 1.185;
-
+    @extend %section-heading;
     @include before-heading("03.", $accent-color);
     @include after-heading($accent-color);
   }

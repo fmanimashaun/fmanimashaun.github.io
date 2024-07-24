@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/functions" as *;
 
 // Variables
 $nav-gap: clamp(1.5rem, 1.0714rem + 0.8929vi, 1.875rem);
@@ -57,17 +58,16 @@ $line-height: 1.185;
         gap: 0.5rem;
         text-decoration: none;
         color: $off-white;
+        font-size: fs(300);
 
         & > span:first-child {
           color: $accent-color;
           font-weight: 700;
-          font-size: 1.25rem;
           line-height: $line-height;
         }
 
         & > span:last-child {
           font-weight: 500;
-          font-size: 1rem;
           line-height: $line-height;
           position: relative;
 
@@ -120,7 +120,6 @@ $line-height: 1.185;
   }
 
   @media screen and (min-width: 1024px) {
-    // padding: 35px clamp(2.8125rem, -2.5721rem + 8.4135vw, 5rem);
 
     &__wrapper {
       position: static;

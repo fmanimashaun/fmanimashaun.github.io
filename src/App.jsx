@@ -12,8 +12,8 @@ import SectionHeader from "@/components/SectionHeader";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import Intro from "@/components/Intro";
 import ContactContent from "@/components/ContactContent";
-import ExperienceContent from "@/components/ExperienceContent";
 import About from "./components/About";
+import { Experience } from "./components/Experience";
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -78,12 +78,7 @@ const App = () => {
           <main className="main">
             <Intro />
             <About />
-            <div id="experience" className="experience">
-              <SectionHeader title="Experience">
-                Where I’ve Worked
-              </SectionHeader>
-              <ExperienceContent />
-            </div>
+            <Experience />
 
             <div id="work" className="work">
               <SectionHeader title="Work">Some Things I’ve Built</SectionHeader>

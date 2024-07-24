@@ -1,0 +1,12 @@
+@use "./functions" as *;
+
+%section-heading {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    font-size: fs(500);
+    line-height: 1.185;
+  }

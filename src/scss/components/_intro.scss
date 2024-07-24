@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/colors" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .intro {
   display: flex;
@@ -23,16 +24,16 @@
   &__greeting {
     color: $accent-color;
     word-spacing: 0.5rem;
-    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+    font-size: fs(200);
   }
 
   &__name {
-    font-size: clamp(1.75rem, 0.7362rem + 4.3257vw, 2.8125rem);
+    font-size: fs(600);
     font-weight: 700;
     line-height: 1;
 
     @media screen and (min-width: 768px) {
-      font-size: clamp(2.8125rem, -1.1161rem + 8.1845vw, 6.25rem);
+      font-size: fs(700);
     }
   }
 
@@ -41,13 +42,13 @@
     font-weight: 400;
     font-style: italic;
     max-inline-size: 65ch;
-    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+    font-size: fs(200);
   }
 
   &__description {
     color: $off-white;
     max-inline-size: 50ch;
-    font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+    font-size: fs(200);
     line-height: 1.65;
 
     a {

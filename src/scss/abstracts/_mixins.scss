@@ -58,6 +58,8 @@
   }
 }
 
+
+
 @mixin before-heading($content, $color) {
   &::before {
     content: $content;

@@ -28,15 +28,17 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const navItems = headerRef.current.querySelectorAll('.header__nav-item');
-    const downloadBtn = headerRef.current.querySelector('.header__download');
+    if (width > 1023) {
+      const navItems = headerRef.current.querySelectorAll(".header__nav-item");
+      const downloadBtn = headerRef.current.querySelector(".header__download");
 
-    const nabItemsWithBtn = [...navItems, downloadBtn];
-    nabItemsWithBtn.forEach((item, index) => {
-      item.style.animationDelay = `${index * 0.2}s`; // Adjust delay as needed
-      item.classList.add('drop-in');
-    });
-  }, []);
+      const nabItemsWithBtn = [...navItems, downloadBtn];
+      nabItemsWithBtn.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.2}s`; // Adjust delay as needed
+        item.classList.add("drop-in");
+      });
+    }
+  }, [width]);
 
   useEffect(() => {
     setShowMenu(false);
@@ -45,54 +47,60 @@ const Header = () => {
   return (
     <header ref={headerRef} className="header">
       <Logo />
-    {width > 1023 && (
+      {width > 1023 && (
         <div
-        className={`header__wrapper ${showMenu && width < 1024 ? "open" : ""}`}
-      >
-        <nav  className="header__nav">
-          <ul className="header__nav-list">
-            {["about", "experience", "work", "contact"].map((section, index) => (
-              <li
-                className="header__nav-item"
-                key={section}
-                onMouseEnter={() => {
-                  if (hoverOff) {
-                    setHoverOff(false);
-                  }
-                  setHoverIndex(index);
-                }}
-                onMouseLeave={() => {
-                  setHoverOff(true);
-                  setHoverIndex(index);
-                }}
-              >
-                <a
-                  href={`#${section}`}
-                  onClick={handleScrollClick}
-                  className={
-                    hoverIndex === index && !hoverOff
-                      ? "hover"
-                      : hoverIndex === index && hoverOff
-                      ? "hover-off"
-                      : "hover-off"
-                  }
-                >
-                  <span>{`0${index + 1}.`}</span>
-                  <span>{section.charAt(0).toUpperCase() + section.slice(1)}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <ButtonLink
-          href={Resume}
-          download="Animashaun Fisayo Resume.pdf"
-          className="header__download"
+          className={`header__wrapper ${
+            showMenu && width < 1024 ? "open" : ""
+          }`}
         >
-          Resume
-        </ButtonLink>
-      </div>
-    )}
+          <nav className="header__nav">
+            <ul className="header__nav-list">
+              {["about", "experience", "work", "contact"].map(
+                (section, index) => (
+                  <li
+                    className="header__nav-item"
+                    key={section}
+                    onMouseEnter={() => {
+                      if (hoverOff) {
+                        setHoverOff(false);
+                      }
+                      setHoverIndex(index);
+                    }}
+                    onMouseLeave={() => {
+                      setHoverOff(true);
+                      setHoverIndex(index);
+                    }}
+                  >
+                    <a
+                      href={`#${section}`}
+                      onClick={handleScrollClick}
+                      className={
+                        hoverIndex === index && !hoverOff
+                          ? "hover"
+                          : hoverIndex === index && hoverOff
+                          ? "hover-off"
+                          : "hover-off"
+                      }
+                    >
+                      <span>{`0${index + 1}.`}</span>
+                      <span>
+                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                      </span>
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
+          <ButtonLink
+            href={Resume}
+            download="Animashaun Fisayo Resume.pdf"
+            className="header__download"
+          >
+            Resume
+          </ButtonLink>
+        </div>
+      )}
       {width < 1024 && (
         <>
           {!showMenu && (
