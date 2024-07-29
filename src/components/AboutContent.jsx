@@ -23,11 +23,7 @@ const AboutContent = () => {
           <a href="#" target="_blank">
             Max-Migold
           </a>{" "}
-          and{" "}
-          <a href="#" target="_blank">
-            Star University
-          </a>
-          , while also building{" "}
+          ,while also building{" "}
           <a href="#" target="_blank">
             JoyMatcher
           </a>
