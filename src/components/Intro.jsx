@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import ButtonLink from "./ButtonLink";
-import Resume from "@/data/resume.pdf";
+import Resume from "@/data/updated-resume.pdf";
 
 const Intro = () => {
   const sectionRef = useRef(null);

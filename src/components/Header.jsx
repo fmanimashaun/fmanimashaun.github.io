@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import useWindowWidth from "@/hooks/useWindowWidth";
-import Resume from "@/data/resume.pdf";
+import Resume from "@/data/updated-resume.pdf";
 import ButtonLink from "./ButtonLink";
 import MenuImg from "@/assets/img/menu.svg";
 import CloseImg from "@/assets/img/close.svg";
