@@ -40,7 +40,7 @@
       line-height: 1.65;
       font-size: fs(200);
       @media screen and (min-width: 768px) {
-        flex-basis: calc(65% - 1rem);
+        flex-basis: calc(70% - 1rem);
       }
 
       a {
@@ -86,7 +86,7 @@
 
     &-right {
       @media screen and (min-width: 768px) {
-        flex-basis: calc(35% - 1rem);
+        flex-basis: calc(30% - 1rem);
       }
     }
   }

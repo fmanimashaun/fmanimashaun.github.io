@@ -31,6 +31,9 @@ const Work = () => {
   return (
     <section ref={sectionRef} id="work" className="work">
       <SectionHeader title="Work">Some Things I’ve Built</SectionHeader>
+      <div className="work__content">
+        <h2>Coming Soon...</h2>
+      </div>
     </section>
   );
 };
