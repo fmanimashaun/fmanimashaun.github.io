@@ -18,7 +18,7 @@ const AsideLeft = () => {
         <a href="https://twitter.com/fmanimashaun" target="_blank">
           <FiTwitter size={20} />
         </a>
-        <a href="https://www.linkedin.com/in/fmanimashaun/" target="_blank">
+        <a href="https://www.linkedin.com/in/fmanimashaun-it/" target="_blank">
           <AiOutlineLinkedin size={20} />
         </a>
         <a href="https://codepen.io/fmanimashaun" target="_blank">
