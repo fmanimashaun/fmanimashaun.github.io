@@ -34,7 +34,7 @@ const Intro = () => {
       <p className="intro__greeting">Hi, My Name is</p>
       <h2 className="intro__name">Engr. Animashaun F.M</h2>
       <p className="intro__tagline">
-        Full-stack Developer | React, Javascript & Typescript, Ruby, PHP, Node,
+        Full-stack Developer | React, Javascript & Typescript, Ruby on
         Rails | Moodle LMS Expert | Aspiring DevOps Engineer | MNSE, COREN, FM,
         CFM Certified
       </p>
